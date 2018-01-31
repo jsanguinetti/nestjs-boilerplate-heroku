@@ -27,13 +27,6 @@ export class UsersService {
         return !!foundUser;
     }
 
-    public async validatePassword(email: string, password: string): Promise<User> {
-        const foundUser = await this.userRepository.findOne({email});
-        if (!foundUser) throw new HttpException('User not found', 401);
-        if (!this.isValidPassword(foundUser, password)) throw new HttpException('User not found', 401);
-        return foundUser;
-    }
-
     public async isValidPassword(user: User, password: string): Promise<boolean> {
         return true;
     }
