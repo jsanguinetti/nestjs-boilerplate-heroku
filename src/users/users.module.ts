@@ -1,29 +1,15 @@
 import { Module, NestModule, forwardRef, MiddlewaresConsumer, Component } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { IsAuthenticated } from '../auth/auth.middleware';
-import { AuthModule } from '../auth/auth.module';
-import { UserSchema } from './schemas/user.schema';
+import { User } from './entities/user.entity';
 import { UsersController } from './users.controller';
 import {UsersService} from './users.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
     imports: [
-        MongooseModule.forFeature([{
-            name: 'User',
-            schema: UserSchema
-        }]),
-        forwardRef(() => AuthModule)
+        TypeOrmModule.forFeature([User])
     ],
     components: [UsersService],
     controllers: [UsersController],
-    exports: [MongooseModule, UsersService]
+    exports: [UsersService]
 })
-export class UsersModule implements NestModule {
-    constructor() {
-
-    }
-
-    public configure(consumer: MiddlewaresConsumer) {
-        consumer.apply(IsAuthenticated).forRoutes(UsersController);
-    }
-}
+export class UsersModule {}

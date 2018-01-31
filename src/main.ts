@@ -1,6 +1,6 @@
 import * as env from 'dotenv';
 import * as logger from 'morgan';
-env.config({ path: '.env.example' });
+env.config();
 
 import * as express from 'express';
 import * as bodyParser from 'body-parser';

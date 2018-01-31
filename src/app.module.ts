@@ -1,16 +1,20 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
+import { Connection } from 'typeorm';
 import { AppController } from './app.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 
 @Module({
     imports: [
-        MongooseModule.forRoot(process.env.DB_URL),
+        TypeOrmModule.forRoot(),
         UsersModule,
         AuthModule
     ],
     controllers: [AppController],
     components: []
 })
-export class ApplicationModule {}
+
+export class ApplicationModule {
+    constructor(private readonly connection: Connection) {}
+}

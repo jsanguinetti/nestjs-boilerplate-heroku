@@ -6,21 +6,3 @@ export class LoginDto {
     @ApiModelProperty()
     readonly password: string;
 }
-
-export class FacebookDto {
-    @ApiModelPropertyOptional()
-    readonly sdk?: boolean;
-    @ApiModelPropertyOptional()
-    readonly accessToken?: string;
-    @ApiModelPropertyOptional()
-    code?: string;
-    @ApiModelPropertyOptional()
-    clientId?: string;
-    @ApiModelPropertyOptional()
-    redirectUri?: string;
-}
-
-export class FacebookDtoQuery {
-    @ApiModelPropertyOptional()
-    readonly sdk?: boolean;
-}

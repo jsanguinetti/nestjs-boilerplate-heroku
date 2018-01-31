@@ -1,23 +1,15 @@
-import { Controller, Get } from '@nestjs/common';
-import {promisify} from 'util';
-
-function _check(cb) {
-    cb(null, 1, 2);
-}
+import { Controller, Post, Body } from '@nestjs/common';
+import { CreateUserDto } from './user.dto';
+import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
-    constructor() {}
+    constructor(
+        private readonly userService: UsersService
+    ) {}
 
-    @Get('authorized')
-    public async authorized() {
-        const _checkAsync = promisify(_check);
-        let ans1, ans2;
-
-        console.log(await _checkAsync());
-
-
-
-        return '123';
+    @Post()
+    public async create(@Body() body: CreateUserDto) {
+        return await this.userService.create(body);
     }
 }
