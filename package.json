@@ -10,7 +10,8 @@
       "start:prod": "node dist/main.js",
       "migrations:generate": "ts-node node_modules/.bin/typeorm migrations:generate",
       "migrations:run": "ts-node node_modules/.bin/typeorm migrations:run",
-      "migrations:revert": "ts-node node_modules/.bin/typeorm migrations:revert"
+      "migrations:revert": "ts-node node_modules/.bin/typeorm migrations:revert",
+      "lint": "tslint -t codeFrame 'src/**/*.ts'"
    },
    "dependencies": {
       "@nestjs/common": "^4.4.0",

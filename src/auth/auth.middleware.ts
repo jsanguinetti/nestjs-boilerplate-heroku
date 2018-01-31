@@ -10,7 +10,7 @@ export class IsAuthenticated implements NestMiddleware {
     constructor(private authService: AuthService) {
 
     }
-    resolve() {
+    public resolve() {
         if (process.env.AUTHENTICATION === 'passport') {
             return async (req: Request, res: Response, next: NextFunction) => {
                 return passport.authenticate('jwt', { session: false })(req, res, next);
