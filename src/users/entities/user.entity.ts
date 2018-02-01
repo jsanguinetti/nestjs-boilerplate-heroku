@@ -27,6 +27,15 @@ export class User {
     @Column()
     public age: number;
 
+    public toJSON() {
+        return {
+            email: this.email,
+            firstName: this.firstName,
+            lastName: this.lastName,
+            age: this.age
+        }
+    }
+
     @BeforeInsert()
     private async encryptPassword() {
         this.password = await bcrypt.hash(this.password, User.DEFAULT_SALT_ROUNDS);
