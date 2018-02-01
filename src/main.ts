@@ -1,4 +1,5 @@
 import * as env from 'dotenv';
+import 'reflect-metadata';
 import * as logger from 'morgan';
 env.config();
 
