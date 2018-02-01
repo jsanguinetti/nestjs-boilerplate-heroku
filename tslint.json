@@ -1,10 +1,7 @@
 {
     "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
+    "extends": [],
     "jsRules": {
-        "no-unused-expression": true
     },
     "rules": {
         "trailing-comma": false,
@@ -27,14 +24,6 @@
         ],
         "object-literal-sort-keys": false,
         "curly": false,
-        "import-spacing": true,
-        "max-classes-per-file": [
-            false
-        ],
-        "ban-types": false,
-        "variable-name": [
-            false
-        ],
         "one-line": [
             false
         ],

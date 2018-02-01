@@ -4,6 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import {User} from './entities/user.entity';
 import { ICreateUser } from './user.interface';
+import * as bcrypt from 'bcrypt';
 
 @Component()
 export class UsersService {
@@ -28,6 +29,6 @@ export class UsersService {
     }
 
     public async isValidPassword(user: User, password: string): Promise<boolean> {
-        return true;
+        return await bcrypt.compare(password, user.password);
     }
 }

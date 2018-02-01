@@ -8,6 +8,7 @@ import * as bodyParser from 'body-parser';
 import { NestFactory } from '@nestjs/core';
 import { ApplicationModule } from './app.module';
 import { initDocumentation } from './documentation';
+import { EntitiesExceptionFilter } from './http-exception.filter';
 
 async function bootstrap() {
     const server = express();
@@ -16,6 +17,7 @@ async function bootstrap() {
     server.use(bodyParser.urlencoded({ extended: false }));
 
     const app = await NestFactory.create(ApplicationModule, server);
+    app.useGlobalFilters(new EntitiesExceptionFilter());
     initDocumentation(app, {
         version: '0.0.1',
         description: 'Nest boilerplate description.',
