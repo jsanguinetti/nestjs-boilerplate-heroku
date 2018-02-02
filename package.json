@@ -38,7 +38,8 @@
       "request": "^2.83.0",
       "rxjs": "^5.4.0",
       "typeorm": "0.1.11",
-      "typescript": "~2.7.0"
+      "typescript": "~2.7.0",
+      "ts-node": "~3.3.0"
    },
    "devDependencies": {
       "@types/bcrypt": "^1.0.0",
@@ -47,7 +48,6 @@
       "@types/node": "^8.0.29",
       "@types/passport-jwt": "^3.0.0",
       "nodemon": "^1.12.1",
-      "ts-node": "3.3.0",
       "tslint": "^5.8.0"
    }
 }
