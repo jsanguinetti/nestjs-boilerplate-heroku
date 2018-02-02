@@ -9,9 +9,9 @@
       "foreman": "foreman start -f Procfile.dev",
       "prestart:prod": "tsc",
       "start:prod": "node dist/main.js",
-      "migrations:generate": "ts-node node_modules/.bin/typeorm migrations:generate",
-      "migrations:run": "ts-node node_modules/.bin/typeorm migrations:run",
-      "migrations:revert": "ts-node node_modules/.bin/typeorm migrations:revert",
+      "migrations:generate": "node_modules/ts-node/dist/bin.js node_modules/.bin/typeorm migrations:generate",
+      "migrations:run": "node_modules/ts-node/dist/bin.js node_modules/.bin/typeorm migrations:run",
+      "migrations:revert": "node_modules/ts-node/dist/bin.js node_modules/.bin/typeorm migrations:revert",
       "lint": "node_modules/tslint/bin/tslint -t codeFrame 'src/**/*.ts'"
    },
    "dependencies": {
