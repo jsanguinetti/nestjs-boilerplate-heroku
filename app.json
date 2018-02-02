@@ -1,0 +1,41 @@
+{
+  "name": "NestJS Boilerplate",
+  "description": "This app is a NestJS boilerplate that runs on Heroku out of the box",
+  "keywords": [
+    "nestjs",
+    "javascript",
+    "node",
+    "nodejs",
+    "api"
+  ],
+  "repository": "https://github.com/jsanguinetti/nestjs-boilerplate-heroku",
+  "env": {
+    "SECRET": {
+      "description": "A secret key for verifying the integrity of signed JWT.",
+      "generator": "secret"
+    },
+    "NODE_ENV": {
+      "value": "production"
+    },
+    "AUTHENTICATION": {
+      "value": "passport"
+    },
+    "DATABASE_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ module.exports = {
   entities: [
     __dirname + '/**/*.entity.' + entitiesExtension
   ],
-  url: process.env.TYPEORM_URL,
+  url: process.env.DATABASE_URL,
   migrations: [migrationsDir],
   cli: {
     migrationsDir: 'src/migration'
