@@ -6,7 +6,8 @@ export function initDocumentation(app: INestApplication, initData: IInitDocument
     const options = new DocumentBuilder()
         .setTitle(initData.title)
         .setDescription(initData.description)
-        .setVersion(initData.version);
+        .setVersion(initData.version)
+        .setSchemes('http', 'https')
 
     if (initData.tag && initData.tag.length) {
         initData.tag.forEach((singleTag) => {
