@@ -1,4 +1,3 @@
-import { InjectModel } from '@nestjs/mongoose';
 import { Component, HttpException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
