@@ -26,7 +26,7 @@ async function bootstrap() {
         endpoint: '/docs'
     });
 
-    await app.listen(3000);
+    await app.listen(parseInt(process.env.PORT) || 3000);
 }
 
 bootstrap();
