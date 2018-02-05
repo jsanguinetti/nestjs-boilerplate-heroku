@@ -19,9 +19,6 @@
     },
     "AUTHENTICATION": {
       "value": "passport"
-    },
-    "DATABASE_URL": {
-      "required": true
     }
   },
   "formation": {
