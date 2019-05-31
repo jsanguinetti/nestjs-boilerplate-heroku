@@ -49,5 +49,8 @@
       "@types/passport-jwt": "^3.0.0",
       "nodemon": "^1.12.1",
       "tslint": "^5.8.0"
+   },
+   "engines": {
+      "node": "8"
    }
 }
