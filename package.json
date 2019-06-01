@@ -7,7 +7,7 @@
       "start": "node index.js",
       "start:watch": "nodemon",
       "foreman": "foreman start -f Procfile.dev",
-      "prestart:prod": "tsc",
+      "prestart:prod": "yarn tsc",
       "start:prod": "node dist/main.js",
       "migrations:generate": "yarn ts-node ./node_modules/typeorm/cli.js migrations:generate",
       "migration:run": "yarn ts-node ./node_modules/typeorm/cli.js migration:run",
