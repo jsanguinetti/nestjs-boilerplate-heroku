@@ -39,12 +39,12 @@
       "swagger-ui-express": "^4.0.5",
       "ts-node": "~8.2.0",
       "typeorm": "0.2.17",
-      "typescript": "~3.5.0"
+      "typescript": "~3.5.0",
+      "@types/node": "^10.0.0"
    },
    "devDependencies": {
       "@types/bcrypt": "^3.0.0",
       "@types/jsonwebtoken": "^8.3.2",
-      "@types/node": "^10.0.0",
       "@types/passport-jwt": "^3.0.1",
       "nodemon": "^1.19.0",
       "tslint": "^5.17.0"
