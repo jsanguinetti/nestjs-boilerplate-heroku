@@ -1,17 +1,17 @@
-import { Component, HttpException } from '@nestjs/common';
+import { Injectable, HttpException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import {User} from './entities/user.entity';
+import { User } from './entities/user.entity';
 import { ICreateUser } from './user.interface';
 import * as bcrypt from 'bcrypt';
 
-@Component()
+@Injectable()
 export class UsersService {
 
     constructor(
         @InjectRepository(User)
         private readonly userRepository: Repository<User>,
-      ) {}
+    ) { }
 
     public async create(userData: ICreateUser): Promise<User> {
         if (!userData.email) throw new HttpException('Email is required', 422);
@@ -21,8 +21,8 @@ export class UsersService {
     }
 
     public async validateUser(userId: string): Promise<boolean> {
-        const foundUser = await this.userRepository.findOneById(userId);
-        if (!foundUser) throw {err: 'Invalid user.'};
+        const foundUser = await this.userRepository.findOne(userId);
+        if (!foundUser) throw { err: 'Invalid user.' };
 
         return !!foundUser;
     }

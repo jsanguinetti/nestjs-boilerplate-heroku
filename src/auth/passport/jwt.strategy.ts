@@ -1,9 +1,9 @@
 import * as passport from 'passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import {Component, HttpException, HttpStatus, Inject} from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus, Inject } from '@nestjs/common';
 import { AuthService } from '../auth.service';
 
-@Component()
+@Injectable()
 export class JwtStrategy extends Strategy {
     constructor(private readonly authService: AuthService) {
 

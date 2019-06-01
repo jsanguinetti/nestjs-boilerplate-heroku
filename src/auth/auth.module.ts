@@ -1,9 +1,9 @@
-import {forwardRef, MiddlewaresConsumer, Module, RequestMethod} from '@nestjs/common';
+import { forwardRef, Module, RequestMethod } from '@nestjs/common';
 import { UsersModule } from '../users/users.module';
 import { IsAuthenticated } from './auth.middleware';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
-import {JwtStrategy} from './passport/jwt.strategy';
+import { JwtStrategy } from './passport/jwt.strategy';
 import { User } from '../users/entities/user.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -12,8 +12,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         TypeOrmModule.forFeature([User]),
         UsersModule
     ],
-    components: [AuthService, IsAuthenticated, JwtStrategy],
+    providers: [AuthService, IsAuthenticated, JwtStrategy],
     controllers: [AuthController],
     exports: [IsAuthenticated]
 })
-export class AuthModule {}
+export class AuthModule { }

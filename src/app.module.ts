@@ -11,10 +11,9 @@ import { UsersModule } from './users/users.module';
         UsersModule,
         AuthModule
     ],
-    controllers: [AppController],
-    components: []
+    controllers: [AppController]
 })
 
 export class ApplicationModule {
-    constructor(private readonly connection: Connection) {}
+    constructor(private readonly connection: Connection) { }
 }
