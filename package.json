@@ -24,7 +24,7 @@
       "@nestjs/testing": "^6.0.0",
       "@nestjs/typeorm": "^6.0.0",
       "@nestjs/websockets": "^6.0.0",
-      "bcrypt": "^3.0.0",
+      "bcrypt": "^5.0.0",
       "class-validator": "^0.8.1",
       "cors": "^2.8.4",
       "dotenv": "^8.0.0",
